@@ -39,7 +39,7 @@ Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeR
 * **Cadastro com Sucesso:**
 ![Sucesso Cadastro](./sucesso_cadastro.png)
 * **Cenário: Cadastro com senha de 2 caracteres (Permissivo):**
-![Cadastro Senha Curta](./sucesso_cadastro_2_caracteres.png)
+![Cadastro Senha Curta](./cadastro_com_2_caracteres.png)
 * **Logs de Execução (Suíte de Cadastro):**
 ![Logs Cadastro](./logs_cadastro.png)
 
