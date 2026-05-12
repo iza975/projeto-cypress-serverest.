@@ -51,6 +51,7 @@ Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeR
 ![Cadastro Senha Curta](cadastro_com_2_caracteres.png)
 
 🔍 Mindset de QA: Análise Crítica e Melhorias
+
 Durante o desenvolvimento da automação, foram aplicadas estratégias para garantir a robustez dos testes e a qualidade do produto:
 
 Massa de Dados Dinâmica: Utilizei a lógica de e-mails aleatórios com Math.random() para garantir que cada teste de cadastro seja único, evitando falsos negativos por "usuário já existente".
