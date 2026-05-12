@@ -6,49 +6,55 @@ Este projeto faz parte do meu portfólio de **Analista de Qualidade (QA)**, foca
 Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeRest**, garantindo que o sistema se comporte corretamente tanto em fluxos de sucesso quanto em cenários de erro.
 
 ## 🛠️ Tecnologias e Ferramentas
-* **Framework:** Cypress
+* **Framework:** [Cypress](https://www.cypress.io/)
 * **Linguagem:** JavaScript
 * **IDE:** VS Code
 * **Ambiente de Teste:** [ServeRest Front](https://front.serverest.dev/login)
 
-## 🧪 Cenários de Teste Automatizados
-- [x] **Login com Sucesso:** Valida a entrada no sistema com credenciais corretas.
-- [x] **Login Negativo:** Verifica o alerta de erro ao inserir e-mail ou senha inválidos.
-- [x] **Cadastro de Usuário:** Validação de criação de conta com dados válidos.
-- [x] **Cadastro (Senha Curta):** Teste de comportamento do sistema com senha de apenas 2 caracteres.
+## 🧪 Roadmap de Testes (Cobertura)
+- [x] **Login:** Sucesso e validação de credenciais inválidas.
+- [x] **Cadastro de Usuário:** Criação de conta com dados válidos.
+- [x] **Cadastro (Análise Crítica):** Teste de comportamento com senha curta.
+- [ ] **Produtos:** Listagem e busca (Em breve 🚀)
+- [ ] **Carrinho:** Fluxo de compra (Em breve 🚀)
+
+## 📂 Estrutura do Projeto
+* `cypress/e2e/`: Scripts de teste agrupados por funcionalidade (`login.cy.js`, `cadastro.cy.js`).
+* Raiz do projeto: Contém as evidências de execução e documentação.
 
 ## 🚀 Como Executar o Projeto
 1. Clone este repositório para sua máquina.
-2. No terminal do VS Code, instale as dependências necessárias:
+2. No terminal do VS Code, instale as dependências:
    ```bash
    npm install
+
    ```
 3. Para abrir o painel do Cypress e rodar os testes:
    ```bash
    npx cypress open
    ```
 
-## Evidencias de testes 
+## 📸 Evidências de Testes 
+
 ### 🔐 Login
-* **Sucesso:**
-![Sucesso Login](./sucesso_login.png)
-* **Erro (Dados Inválidos):**
-![Erro Login](./erro_login.png)
+* **Cenários de Sucesso e Erro:**
+![Sucesso Login](sucesso_login.png)
+![Erro Login](erro_login.png)
 
 ### 👤 Cadastro de Usuário
-* **Cadastro com Sucesso:**
-![Sucesso Cadastro](./sucesso_cadastro.png)
-* **Cenário: Cadastro com senha de 2 caracteres (Permissivo):**
-![Cadastro Senha Curta](./cadastro_com_2_caracteres.png)
-* **Logs de Execução (Suíte de Cadastro):**
-![Logs Cadastro](./logs_cadastro.png)
+* **Fluxo Completo e Logs:**
 
-🔍 Análise Crítica e Sugestões de Melhoria (Mindset QA)
+![Sucesso Cadastro](sucesso_cadastro.png)
+![Logs Cadastro](logs_cadastro.png)
 
-Durante o desenvolvimento dos testes de Cadastro, identifiquei pontos importantes para a segurança e qualidade do produto:
+* **Cenário Crítico (Senha de 2 caracteres):**
+![Cadastro Senha Curta](cadastro_com_2_caracteres.png)
 
-Validação de Senha: O sistema permite o cadastro com senhas de apenas 2 caracteres.
+🔍 Mindset de QA: Análise Crítica e Melhorias
+Durante o desenvolvimento da automação, foram aplicadas estratégias para garantir a robustez dos testes e a qualidade do produto:
 
-Sugestão: Implementar um limite mínimo de caracteres (ex: 6 ou 8) para garantir a segurança das contas dos usuários.
+Massa de Dados Dinâmica: Utilizei a lógica de e-mails aleatórios com Math.random() para garantir que cada teste de cadastro seja único, evitando falsos negativos por "usuário já existente".
 
-Massa de Dados: Foi utilizada a lógica de geração de e-mails aleatórios com Math.random() para garantir que cada execução de teste de cadastro seja única e independente, evitando falhas por "usuário já existente".
+Melhoria de Segurança: Identifiquei que o sistema permite cadastros com senhas de apenas 2 caracteres.
+
+Sugestão: Implementar validação de minLength (mínimo de 8 caracteres) para aumentar a segurança da aplicação.
