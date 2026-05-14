@@ -38,16 +38,16 @@ Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeR
 
 ### 🔐 Login
 * **Cenários de Sucesso e Erro:**
-![Sucesso Login](sucesso_login.PNG)
-![Erro Login](erro_login.PNG)
+![Sucesso Login](assets/sucesso_login.png)
+![Erro Login](assets/erro_login.png)
 
 ### 👤 Cadastro de Usuário
 * **Fluxo Completo e Logs:**
-![Sucesso Cadastro](sucesso_cadastro.PNG)
-![Logs Cadastro](logs_cadastro.PNG)
+![Sucesso Cadastro](assets/sucesso_cadastro.png)
+![Logs Cadastro](assets/logs_cadastro.png)
 
 * **Cenário Crítico (Senha de 2 caracteres):**
-![Cadastro Senha Curta](cadastro_com_2_caracteres.PNG)
+![Cadastro Senha Curta](assets/cadastro_com_2_caracteres.png)
 
 🔍 Mindset de QA: Análise Crítica e Melhorias
 
