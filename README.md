@@ -12,11 +12,16 @@ Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeR
 * **Ambiente de Teste:** [ServeRest Front](https://front.serverest.dev/login)
 
 ## 🧪 Roadmap de Testes (Cobertura)
-- [x] **Login:** Sucesso e validação de credenciais inválidas.
-- [x] **Cadastro de Usuário:** Criação de conta com dados válidos.
-- [x] **Cadastro (Análise Crítica):** Teste de comportamento com senha curta.
-- [ ] **Produtos:** Listagem e busca (Em breve 🚀)
-- [ ] **Carrinho:** Fluxo de compra (Em breve 🚀)
+* 🔐 **Login:** Sucesso, validação de credenciais inválidas e tratamento de campos vazios.
+* 👤 **Cadastro de Usuário:** Criação de conta com dados válidos e login automatizado pós-cadastro.
+* ⚠️ **Cadastro (Análise Crítica):** Teste de comportamento com senha curta.
+* 📦 **Produtos:** Listagem e busca *(Em breve 🚀)*
+* 🛒 **Carrinho:** Fluxo de compra *(Em breve 🚀)*
+
+## 💪 Diferenciais Técnicos Aplicados (Refatoração)
+Durante o desenvolvimento da automação, o projeto foi evoluído para aplicar conceitos avançados de arquitetura de testes:
+* **Massa de Dados Dinâmica (`Math.random()`):** Utilização de lógica de e-mails aleatórios únicos a cada execução para garantir a independência dos testes, evitando falsos negativos por "usuário já existente" ou falhas devido a resets e limpezas no banco de dados do servidor (Erro 401).
+* **Resiliência e Tratamento de Seletores:** Mapeamento e correção individualizada de seletores de elementos do front-end que divergem entre as telas do sistema (como as propriedades de campos de senha e alertas).
 
 ## 📂 Estrutura do Projeto
 * `cypress/e2e/`: Scripts de teste agrupados por funcionalidade (`login.cy.js`, `cadastro.cy.js`).
@@ -51,10 +56,6 @@ Validar as funcionalidades de login, cadastro e navegação do ambiente **ServeR
 
 🔍 Mindset de QA: Análise Crítica e Melhorias
 
-Durante o desenvolvimento da automação, foram aplicadas estratégias para garantir a robustez dos testes e a qualidade do produto:
+Melhoria de Segurança Identificada: Durante a automação, identifiquei que o sistema permite cadastrar usuários com senhas de apenas 2 caracteres.
 
-Massa de Dados Dinâmica: Utilizei a lógica de e-mails aleatórios com Math.random() para garantir que cada teste de cadastro seja único, evitando falsos negativos por "usuário já existente".
-
-Melhoria de Segurança: Identifiquei que o sistema permite cadastros com senhas de apenas 2 caracteres.
-
-Sugestão: Implementar validação de minLength (mínimo de 8 caracteres) para aumentar a segurança da aplicação.
+Sugestão de Negócio: Implementar uma validação de minLength (mínimo de 8 caracteres contendo letras e números) no front-end e no back-end para aumentar a segurança da aplicação.
